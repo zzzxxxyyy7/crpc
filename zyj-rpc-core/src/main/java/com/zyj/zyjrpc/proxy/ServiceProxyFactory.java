@@ -1,5 +1,7 @@
 package com.zyj.zyjrpc.proxy;
 
+import com.zyj.zyjrpc.RpcApplication;
+
 import java.lang.reflect.Proxy;
 
 /**
@@ -16,6 +18,19 @@ public class ServiceProxyFactory {
      * @return
      */
     public static <T> T getProxy(Class<T> serviceClass) {
-        return (T) Proxy.newProxyInstance(serviceClass.getClassLoader(), new Class[]{serviceClass}, new ServiceProxy());
+        if(RpcApplication.getRpcConfig().getMock()) {
+            return getMockProxy(serviceClass);
+        }
+        return (T) Proxy.newProxyInstance(
+                serviceClass.getClassLoader(),
+                new Class[]{serviceClass},
+                new ServiceProxy());
+    }
+
+    public static <T> T getMockProxy(Class<T> serviceClass) {
+        return (T) Proxy.newProxyInstance(
+                serviceClass.getClassLoader(),
+                new Class[]{serviceClass},
+                new ServiceProxy());
     }
 }
