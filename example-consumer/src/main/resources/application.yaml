@@ -4,3 +4,4 @@ rpc:
   host: localhost
   version: "1.0"
   mock: true
+  serializer: "JSON"

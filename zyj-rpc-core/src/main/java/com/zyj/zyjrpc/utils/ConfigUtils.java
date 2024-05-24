@@ -9,7 +9,7 @@ public class ConfigUtils {
         return loadConfig(tClass, prefix, "");
     }
 
-    public static <T>T loadConfig(Class<T> tclass, String prefix, String environment){
+    public static <T> T loadConfig(Class<T> tclass, String prefix, String environment){
         StringBuilder configFileBuilder = new StringBuilder("application");
         if(StrUtil.isNotBlank(environment)) {
             configFileBuilder.append("-").append(environment);

@@ -1,5 +1,6 @@
 package com.zyj.zyjrpc.config;
 
+import com.zyj.zyjrpc.serializer.SerializerKeys;
 import lombok.Data;
 
 /**
@@ -31,4 +32,9 @@ public class RpcConfig {
      * 模拟调用
      */
     private Boolean mock = false;
+
+    /**
+     * 序列化器
+     */
+    private String serializer = SerializerKeys.JDK;
 }

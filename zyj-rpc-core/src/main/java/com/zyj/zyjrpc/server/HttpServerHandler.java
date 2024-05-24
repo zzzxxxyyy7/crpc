@@ -1,9 +1,10 @@
 package com.zyj.zyjrpc.server;
 
+import com.zyj.zyjrpc.RpcApplication;
 import com.zyj.zyjrpc.model.RpcRequest;
 import com.zyj.zyjrpc.model.RpcResponse;
 import com.zyj.zyjrpc.registry.LocalRegistry;
-import com.zyj.zyjrpc.serializer.JdkSerializer;
+import com.zyj.zyjrpc.serializer.SerializationFactory;
 import com.zyj.zyjrpc.serializer.Serializer;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
@@ -21,7 +22,9 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
-        final Serializer serializer = new JdkSerializer();
+        final Serializer serializer = SerializationFactory.getSerialization(
+                RpcApplication.getRpcConfig().getSerializer()
+        );
 
         // 记录请求日志
         System.out.println("Received request: " + request.method() + " " + request.uri());
