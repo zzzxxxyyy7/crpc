@@ -1,14 +1,20 @@
 package com.zyj.zyjrpc;
 
+import com.zyj.zyjrpc.config.RegistryConfig;
 import com.zyj.zyjrpc.config.RpcConfig;
 import com.zyj.zyjrpc.constant.RpcConstant;
+import com.zyj.zyjrpc.registry.Registry;
+import com.zyj.zyjrpc.registry.RegistryFactory;
 import com.zyj.zyjrpc.utils.ConfigUtils;
 
 public class RpcApplication {
     private static volatile RpcConfig rpcConfig;
 
-    public static void init(RpcConfig rpcConfig) {
-        RpcApplication.rpcConfig = rpcConfig;
+    public static void init(RpcConfig newRpcConfig) {
+        rpcConfig = newRpcConfig;
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+        registry.init(registryConfig);
     }
 
     public static void init() {

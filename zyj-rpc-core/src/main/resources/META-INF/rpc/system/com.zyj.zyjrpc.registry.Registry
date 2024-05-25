@@ -1,0 +1,1 @@
+etcd=com.zyj.zyjrpc.registry.ETCD.EtcdRegistry
