@@ -14,7 +14,7 @@ public class ConfigUtils {
         if(StrUtil.isNotBlank(environment)) {
             configFileBuilder.append("-").append(environment);
         }
-        configFileBuilder.append(".yaml");
+        configFileBuilder.append(".properties");
         Props props = new Props(configFileBuilder.toString());
         return props.toBean(tclass,prefix);
     }
