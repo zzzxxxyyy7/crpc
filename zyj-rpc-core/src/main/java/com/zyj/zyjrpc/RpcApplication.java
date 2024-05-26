@@ -15,6 +15,9 @@ public class RpcApplication {
         RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
         Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
         registry.init(registryConfig);
+
+        // 创建并注册一个 shutdown Hook ， JVM退出时执行操作 --> 配合实现主动服务下线功能
+        Runtime.getRuntime().addShutdownHook(new Thread(registry::destory));
     }
 
     public static void init() {
