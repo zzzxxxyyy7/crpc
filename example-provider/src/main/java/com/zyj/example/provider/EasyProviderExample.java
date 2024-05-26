@@ -8,12 +8,11 @@ import com.zyj.zyjrpc.model.ServiceMetaInfo;
 import com.zyj.zyjrpc.registry.LocalRegistry;
 import com.zyj.zyjrpc.registry.Registry;
 import com.zyj.zyjrpc.registry.RegistryFactory;
-import com.zyj.zyjrpc.server.HttpServer;
-import com.zyj.zyjrpc.server.VertxHttpServer;
+import com.zyj.zyjrpc.server.Server;
+import com.zyj.zyjrpc.server.TCP.VertxTcpServer;
 
 /**
  * 简易服务提供者示例
- *
  */
 public class EasyProviderExample {
     public static void main(String[] args) {
@@ -39,8 +38,12 @@ public class EasyProviderExample {
             throw new RuntimeException(e);
         }
 
-        // 启动 web 服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        // 启动 HTTP web 服务
+//        Server httpServer = new VertxHttpServer();
+//        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+
+//      启动 TCP web 服务
+        Server tcpServer = new VertxTcpServer();
+        tcpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
     }
 }

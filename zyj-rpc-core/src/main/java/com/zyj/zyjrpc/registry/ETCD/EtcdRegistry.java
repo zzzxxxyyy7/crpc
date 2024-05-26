@@ -155,7 +155,7 @@ public class EtcdRegistry implements Registry {
     @Override
     public void heartBeat() {
         // 10 秒续签一次
-        CronUtil.schedule("*/10 * * * * *", new Task() {
+        CronUtil.schedule("*/20 * * * * *", new Task() {
             @Override
             public void execute() {
                 System.out.println("心跳监听执行中: " + LocalDateTime.now());

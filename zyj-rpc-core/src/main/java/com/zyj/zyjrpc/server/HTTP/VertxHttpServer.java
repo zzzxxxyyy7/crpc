@@ -1,12 +1,13 @@
-package com.zyj.zyjrpc.server;
+package com.zyj.zyjrpc.server.HTTP;
 
+import com.zyj.zyjrpc.server.Server;
 import io.vertx.core.Vertx;
 
 /**
  * Vertx HTTP 服务器
  *
  */
-public class VertxHttpServer implements HttpServer {
+public class VertxHttpServer implements Server {
 
     /**
      * 启动服务器
