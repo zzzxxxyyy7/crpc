@@ -1,0 +1,3 @@
+roundRobin=com.zyj.zyjrpc.loadbalancer.RoundRobinLoadBalancer
+random=com.zyj.zyjrpc.loadbalancer.RandomLoadBalancer
+consistentHash=com.zyj.zyjrpc.loadbalancer.ConsistentHashLoadBalancer

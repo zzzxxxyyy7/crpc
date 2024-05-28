@@ -1,0 +1,4 @@
+failBack=com.zyj.zyjrpc.fault.tolerant.FailBackTolerantStrategy
+failFast=com.zyj.zyjrpc.fault.tolerant.FailFastTolerantStrategy
+failOver=com.zyj.zyjrpc.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.zyj.zyjrpc.fault.tolerant.FailSafeTolerantStrategy
