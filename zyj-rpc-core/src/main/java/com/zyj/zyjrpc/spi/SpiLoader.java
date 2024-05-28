@@ -105,6 +105,7 @@ public class SpiLoader {
         Map<String, Class<?>> keyClassMap = new HashMap<>();
         for (String scanDir : SCAN_DIRS) {
             List<URL> resources = ResourceUtil.getResources(scanDir + loadClass.getName());
+            System.out.println(scanDir + loadClass.getName());
             // 读取每个资源文件
             for (URL resource : resources) {
                 try {

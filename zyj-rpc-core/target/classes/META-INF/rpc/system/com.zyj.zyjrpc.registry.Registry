@@ -1,1 +1,2 @@
-etcd=com.zyj.zyjrpc.registry.ETCD.EtcdRegistry
+etcd=com.zyj.zyjrpc.registry.EtcdRegistry
+zookeeper=com.zyj.zyjrpc.registry.ZooKeeperRegistry

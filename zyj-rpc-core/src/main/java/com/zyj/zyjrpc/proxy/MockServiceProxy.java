@@ -1,32 +1,50 @@
 package com.zyj.zyjrpc.proxy;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
- * Mock 服务代理（JDK动态代理）
+ * Mock 服务代理（JDK 动态代理）
  */
+@Slf4j
 public class MockServiceProxy implements InvocationHandler {
-    // TODO 学习Java动态代理
 
+    /**
+     * 调用代理
+     *
+     * @return
+     * @throws Throwable
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        Class<?> returnType = method.getReturnType();
-        return getdefaultobject(returnType);
+        // 根据方法的返回值类型，生成特定的默认值对象
+        Class<?> methodReturnType = method.getReturnType();
+        log.info("mock invoke {}", method.getName());
+        return getDefaultObject(methodReturnType);
     }
 
-    private Object getdefaultobject(Class<?> returnType) {
-        if(returnType.isPrimitive()) {
-            if(returnType == boolean.class) {
+    /**
+     * 生成指定类型的默认值对象（可自行完善默认值逻辑）
+     *
+     * @param type
+     * @return
+     */
+    private Object getDefaultObject(Class<?> type) {
+        // 基本类型
+        if (type.isPrimitive()) {
+            if (type == boolean.class) {
                 return false;
-            } else if(returnType == short.class) {
+            } else if (type == short.class) {
                 return (short) 0;
-            } else if (returnType == int.class) {
+            } else if (type == int.class) {
                 return 0;
-            } else if (returnType == long.class) {
+            } else if (type == long.class) {
                 return 0L;
             }
         }
+        // 对象类型
         return null;
     }
 }

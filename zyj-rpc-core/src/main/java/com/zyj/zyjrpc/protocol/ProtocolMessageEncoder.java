@@ -1,18 +1,21 @@
 package com.zyj.zyjrpc.protocol;
 
-import com.zyj.zyjrpc.serializer.SerializationFactory;
 import com.zyj.zyjrpc.serializer.Serializer;
+import com.zyj.zyjrpc.serializer.SerializerFactory;
 import io.vertx.core.buffer.Buffer;
 
 import java.io.IOException;
 
 /**
  * 协议消息编码器
+ *
+
  */
 public class ProtocolMessageEncoder {
 
     /**
      * 编码
+     *
      * @param protocolMessage
      * @return
      * @throws IOException
@@ -35,15 +38,11 @@ public class ProtocolMessageEncoder {
         if (serializerEnum == null) {
             throw new RuntimeException("序列化协议不存在");
         }
-        // 通过序列化工厂获得指定序列化器
-        Serializer serializer = SerializationFactory.getSerialization(serializerEnum.getValue());
-        // 把请求编码为byte数组
+        Serializer serializer = SerializerFactory.getInstance(serializerEnum.getValue());
         byte[] bodyBytes = serializer.serialize(protocolMessage.getBody());
         // 写入 body 长度和数据
         buffer.appendInt(bodyBytes.length);
-        // 往 Buffer 中写入请求体数据(Byte数组)
         buffer.appendBytes(bodyBytes);
-        // 往下传递 Buffer 数组
         return buffer;
     }
 }

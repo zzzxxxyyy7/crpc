@@ -10,9 +10,7 @@ import java.io.Serializable;
 /**
  * RPC 响应
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @learn <a href="https://codefather.cn">编程宝典</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
+
  */
 @Data
 @Builder
@@ -39,4 +37,5 @@ public class RpcResponse implements Serializable {
      * 异常信息
      */
     private Exception exception;
+
 }

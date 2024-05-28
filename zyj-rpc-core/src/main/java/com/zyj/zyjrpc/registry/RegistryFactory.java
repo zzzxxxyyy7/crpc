@@ -1,12 +1,10 @@
 package com.zyj.zyjrpc.registry;
 
-import com.zyj.zyjrpc.registry.ETCD.EtcdRegistry;
 import com.zyj.zyjrpc.spi.SpiLoader;
 
 /**
  * 注册中心工厂（用于获取注册中心对象）
  */
-// TODO 实现 Zookeeper 注册中心
 public class RegistryFactory {
 
     // SPI 动态加载

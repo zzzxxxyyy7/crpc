@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 /**
  * 协议消息的序列化器枚举
  *
+
  */
 @Getter
 public enum ProtocolMessageSerializerEnum {

@@ -11,13 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProtocolMessage<T> {
+
     /**
      * 消息头
      */
     private Header header;
 
     /**
-     * 消息体（请求或相应对象）
+     * 消息体（请求或响应对象）
      */
     private T body;
 
@@ -26,33 +27,41 @@ public class ProtocolMessage<T> {
      */
     @Data
     public static class Header {
+
         /**
-         * 魔数
+         * 魔数，保证安全性
          */
         private byte magic;
+
         /**
          * 版本号
          */
         private byte version;
+
         /**
          * 序列化器
          */
         private byte serializer;
+
         /**
-         * 消息类型（请求或响应）
+         * 消息类型（请求 / 响应）
          */
         private byte type;
+
         /**
-         * 状态码
+         * 状态
          */
         private byte status;
+
         /**
-         * 请求ID
+         * 请求 id
          */
         private long requestId;
+
         /**
          * 消息体长度
          */
         private int bodyLength;
     }
+
 }

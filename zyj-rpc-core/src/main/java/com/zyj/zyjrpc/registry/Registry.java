@@ -40,12 +40,13 @@ public interface Registry {
     List<ServiceMetaInfo> serviceDiscovery(String serviceKey);
 
     /**
-     * 服务端心跳检测
+     * 心跳检测（服务端）
      */
     void heartBeat();
 
     /**
-     * 消费端监听服务节点变化
+     * 监听（消费端）
+     *
      * @param serviceNodeKey
      */
     void watch(String serviceNodeKey);
@@ -53,5 +54,5 @@ public interface Registry {
     /**
      * 服务销毁
      */
-    void destory();
+    void destroy();
 }

@@ -1,8 +1,11 @@
 package com.zyj.zyjrpc.serializer;
 
+/**
+ * 序列化器键名常量
+ */
 public interface SerializerKeys {
     String JDK = "jdk";
     String JSON = "json";
-    String HESSIAN = "hession";
     String KRYO = "kryo";
+    String HESSIAN = "hessian";
 }

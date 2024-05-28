@@ -5,6 +5,7 @@ import io.vertx.core.Vertx;
 /**
  * Vertx HTTP 服务器
  *
+
  */
 public class VertxHttpServer implements HttpServer {
 
@@ -17,7 +18,7 @@ public class VertxHttpServer implements HttpServer {
         // 创建 Vert.x 实例
         Vertx vertx = Vertx.vertx();
 
-        // 通过 Vert.x实例 创建 HTTP 服务器
+        // 创建 HTTP 服务器
         io.vertx.core.http.HttpServer server = vertx.createHttpServer();
 
         // 监听端口并处理请求

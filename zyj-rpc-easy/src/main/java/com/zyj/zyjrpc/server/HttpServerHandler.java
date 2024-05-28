@@ -16,14 +16,16 @@ import java.lang.reflect.Method;
 /**
  * HTTP 请求处理
  *
+
  */
 public class HttpServerHandler implements Handler<HttpServerRequest> {
+
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
         final Serializer serializer = new JdkSerializer();
 
-        // 记录请求日志
+        // 记录日志
         System.out.println("Received request: " + request.method() + " " + request.uri());
 
         // 异步处理 HTTP 请求

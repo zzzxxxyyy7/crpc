@@ -2,8 +2,8 @@ package com.zyj.zyjrpc.protocol;
 
 import com.zyj.zyjrpc.model.RpcRequest;
 import com.zyj.zyjrpc.model.RpcResponse;
-import com.zyj.zyjrpc.serializer.SerializationFactory;
 import com.zyj.zyjrpc.serializer.Serializer;
+import com.zyj.zyjrpc.serializer.SerializerFactory;
 import io.vertx.core.buffer.Buffer;
 
 import java.io.IOException;
@@ -11,6 +11,7 @@ import java.io.IOException;
 /**
  * 协议消息解码器
  *
+
  */
 public class ProtocolMessageDecoder {
 
@@ -43,7 +44,7 @@ public class ProtocolMessageDecoder {
         if (serializerEnum == null) {
             throw new RuntimeException("序列化消息的协议不存在");
         }
-        Serializer serializer = SerializationFactory.getSerialization(serializerEnum.getValue());
+        Serializer serializer = SerializerFactory.getInstance(serializerEnum.getValue());
         ProtocolMessageTypeEnum messageTypeEnum = ProtocolMessageTypeEnum.getEnumByKey(header.getType());
         if (messageTypeEnum == null) {
             throw new RuntimeException("序列化消息的类型不存在");

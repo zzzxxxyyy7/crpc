@@ -4,7 +4,6 @@ import java.io.IOException;
 
 /**
  * 序列化器接口
- *
  */
 public interface Serializer {
 
@@ -22,10 +21,10 @@ public interface Serializer {
      * 反序列化
      *
      * @param bytes
-     * @param type
+     * @param tClass
      * @param <T>
      * @return
      * @throws IOException
      */
-    <T> T deserialize(byte[] bytes, Class<T> type) throws IOException;
+    <T> T deserialize(byte[] bytes, Class<T> tClass) throws IOException;
 }

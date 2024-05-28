@@ -4,6 +4,11 @@ import cn.hutool.core.util.StrUtil;
 import com.zyj.zyjrpc.constant.RpcConstant;
 import lombok.Data;
 
+/**
+ * 服务元信息（注册信息）
+ *
+
+ */
 @Data
 public class ServiceMetaInfo {
 

@@ -3,19 +3,39 @@ package com.zyj.zyjrpc.utils;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.setting.dialect.Props;
 
+/**
+ * 配置工具类
+ */
 public class ConfigUtils {
 
-    public static <T> T loadConfig(Class<T> tClass , String prefix) {
+    /**
+     * 加载配置对象
+     *
+     * @param tClass
+     * @param prefix
+     * @param <T>
+     * @return
+     */
+    public static <T> T loadConfig(Class<T> tClass, String prefix) {
         return loadConfig(tClass, prefix, "");
     }
 
-    public static <T> T loadConfig(Class<T> tclass, String prefix, String environment){
+    /**
+     * 加载配置对象，支持区分环境
+     *
+     * @param tClass
+     * @param prefix
+     * @param environment
+     * @param <T>
+     * @return
+     */
+    public static <T> T loadConfig(Class<T> tClass, String prefix, String environment) {
         StringBuilder configFileBuilder = new StringBuilder("application");
-        if(StrUtil.isNotBlank(environment)) {
+        if (StrUtil.isNotBlank(environment)) {
             configFileBuilder.append("-").append(environment);
         }
         configFileBuilder.append(".properties");
         Props props = new Props(configFileBuilder.toString());
-        return props.toBean(tclass,prefix);
+        return props.toBean(tClass, prefix);
     }
 }

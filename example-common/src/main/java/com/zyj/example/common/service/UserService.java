@@ -2,7 +2,13 @@ package com.zyj.example.common.service;
 
 import com.zyj.example.common.model.User;
 
+/**
+ * 用户服务
+ *
+
+ */
 public interface UserService {
+
     /**
      * 获取用户
      *
@@ -11,6 +17,11 @@ public interface UserService {
      */
     User getUser(User user);
 
+    /**
+     * 用于测试 mock 接口返回值
+     *
+     * @return
+     */
     default short getNumber() {
         return 1;
     }
