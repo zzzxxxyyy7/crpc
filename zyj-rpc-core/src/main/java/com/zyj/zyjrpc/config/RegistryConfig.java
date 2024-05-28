@@ -18,7 +18,7 @@ public class RegistryConfig {
     /**
      * 注册中心地址
      */
-    private String address = "http://localhost:2380";
+    private String address = "http://112.124.33.246:2380";
 
     /**
      * 用户名

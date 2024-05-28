@@ -25,7 +25,7 @@ public class LoadBalancerTest {
         ServiceMetaInfo serviceMetaInfo1 = new ServiceMetaInfo();
         serviceMetaInfo1.setServiceName("myService");
         serviceMetaInfo1.setServiceVersion("1.0");
-        serviceMetaInfo1.setServiceHost("localhost");
+        serviceMetaInfo1.setServiceHost("112.124.33.246");
         serviceMetaInfo1.setServicePort(1234);
         ServiceMetaInfo serviceMetaInfo2 = new ServiceMetaInfo();
         serviceMetaInfo2.setServiceName("myService");

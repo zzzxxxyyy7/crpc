@@ -2,7 +2,7 @@ package com.zyj.zyjrpc.springboot.starter.bootstrap;
 
 import com.zyj.zyjrpc.RpcApplication;
 import com.zyj.zyjrpc.config.RpcConfig;
-import com.zyj.zyjrpc.server.tcp.VertxTcpServer;
+import com.zyj.zyjrpc.server.VertxHttpServer;
 import com.zyj.zyjrpc.springboot.starter.annotation.EnableRpc;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -35,8 +35,11 @@ public class RpcInitBootstrap implements ImportBeanDefinitionRegistrar {
 
         // 启动服务器
         if (needServer) {
-            VertxTcpServer vertxTcpServer = new VertxTcpServer();
-            vertxTcpServer.doStart(rpcConfig.getServerPort());
+            // TCP服务器
+//            VertxTcpServer vertxTcpServer = new VertxTcpServer();
+//            vertxTcpServer.doStart(rpcConfig.getServerPort());
+            VertxHttpServer vertxHttpServer = new VertxHttpServer();
+            vertxHttpServer.doStart(rpcConfig.getServerPort());
         } else {
             log.info("不启动 server");
         }

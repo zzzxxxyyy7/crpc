@@ -26,7 +26,7 @@ public class RpcConfig {
     /**
      * 服务器主机名
      */
-    private String serverHost = "localhost";
+    private String serverHost = "112.124.33.246";
 
     /**
      * 服务器端口号
