@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 协议消息的序列化器枚举
+ * 协议所使用序列号器的枚举类
  *
-
+ *
  */
 @Getter
 public enum ProtocolMessageSerializerEnum {

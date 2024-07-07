@@ -3,9 +3,9 @@ package com.zyj.zyjrpc.protocol;
 import lombok.Getter;
 
 /**
- * 协议消息的状态枚举
+ * 协议消息所使用的状态枚举类
  *
-
+ *
  */
 @Getter
 public enum ProtocolMessageStatusEnum {

@@ -5,15 +5,16 @@ package com.zyj.zyjrpc.fault.retry;
 
  */
 public interface RetryStrategyKeys {
-
     /**
      * 不重试
      */
     String NO = "no";
-
     /**
      * 固定时间间隔
      */
     String FIXED_INTERVAL = "fixedInterval";
-
+    /**
+     * 递增间隔重试
+     */
+    String Exponential_INTERVAL = "exponentialBackOff";
 }

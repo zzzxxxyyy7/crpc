@@ -27,5 +27,4 @@ public class RetryStrategyFactory {
     public static RetryStrategy getInstance(String key) {
         return SpiLoader.getInstance(RetryStrategy.class, key);
     }
-
 }

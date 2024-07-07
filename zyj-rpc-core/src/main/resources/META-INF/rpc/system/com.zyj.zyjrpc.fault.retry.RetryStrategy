@@ -1,2 +1,3 @@
 no=com.zyj.zyjrpc.fault.retry.NoRetryStrategy
 fixedInterval=com.zyj.zyjrpc.fault.retry.FixedIntervalRetryStrategy
+exponentialBackOff=com.zyj.zyjrpc.fault.retry.ExponentialBackoffRetryStrategy

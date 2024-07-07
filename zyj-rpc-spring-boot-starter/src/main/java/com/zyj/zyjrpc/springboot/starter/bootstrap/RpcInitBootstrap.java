@@ -2,7 +2,7 @@ package com.zyj.zyjrpc.springboot.starter.bootstrap;
 
 import com.zyj.zyjrpc.RpcApplication;
 import com.zyj.zyjrpc.config.RpcConfig;
-import com.zyj.zyjrpc.server.VertxHttpServer;
+import com.zyj.zyjrpc.server.http.VertxHttpServer;
 import com.zyj.zyjrpc.springboot.starter.annotation.EnableRpc;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;

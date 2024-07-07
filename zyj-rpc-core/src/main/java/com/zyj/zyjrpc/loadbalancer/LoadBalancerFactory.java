@@ -27,5 +27,4 @@ public class LoadBalancerFactory {
     public static LoadBalancer getInstance(String key) {
         return SpiLoader.getInstance(LoadBalancer.class, key);
     }
-
 }

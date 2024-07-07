@@ -33,11 +33,12 @@ public class ProtocolMessageEncoder {
         buffer.appendByte(header.getType());
         buffer.appendByte(header.getStatus());
         buffer.appendLong(header.getRequestId());
-        // 获取序列化器
+        // 获取序列化协议枚举类
         ProtocolMessageSerializerEnum serializerEnum = ProtocolMessageSerializerEnum.getEnumByKey(header.getSerializer());
         if (serializerEnum == null) {
             throw new RuntimeException("序列化协议不存在");
         }
+        // 获取序列化器
         Serializer serializer = SerializerFactory.getInstance(serializerEnum.getValue());
         byte[] bodyBytes = serializer.serialize(protocolMessage.getBody());
         // 写入 body 长度和数据

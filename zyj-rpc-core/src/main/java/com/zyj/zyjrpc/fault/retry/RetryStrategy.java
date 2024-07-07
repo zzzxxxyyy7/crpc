@@ -9,7 +9,6 @@ import java.util.concurrent.Callable;
 
  */
 public interface RetryStrategy {
-
     /**
      * 重试
      *

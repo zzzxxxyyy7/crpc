@@ -3,9 +3,9 @@ package com.zyj.zyjrpc.protocol;
 import lombok.Getter;
 
 /**
- * 协议消息的类型枚举
+ * 协议消息所使用的类型枚举类
  *
-
+ *
  */
 @Getter
 public enum ProtocolMessageTypeEnum {

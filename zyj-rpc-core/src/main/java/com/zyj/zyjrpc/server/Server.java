@@ -3,7 +3,7 @@ package com.zyj.zyjrpc.server;
 /**
  * HTTP 服务器接口
  */
-public interface HttpServer {
+public interface Server {
 
     /**
      * 启动服务器

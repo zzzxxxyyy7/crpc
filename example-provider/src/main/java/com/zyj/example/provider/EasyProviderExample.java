@@ -2,8 +2,8 @@ package com.zyj.example.provider;
 
 import com.zyj.example.common.service.UserService;
 import com.zyj.zyjrpc.registry.LocalRegistry;
-import com.zyj.zyjrpc.server.HttpServer;
-import com.zyj.zyjrpc.server.VertxHttpServer;
+import com.zyj.zyjrpc.server.Server;
+import com.zyj.zyjrpc.server.http.VertxHttpServer;
 
 /**
  * 简易服务提供者示例
@@ -17,7 +17,7 @@ public class EasyProviderExample {
         LocalRegistry.register(UserService.class.getName(), UserServiceImpl.class);
 
         // 启动 web 服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(8080);
+        Server server = new VertxHttpServer();
+        server.doStart(8080);
     }
 }

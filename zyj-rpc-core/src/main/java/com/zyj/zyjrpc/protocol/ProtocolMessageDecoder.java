@@ -11,10 +11,9 @@ import java.io.IOException;
 /**
  * 协议消息解码器
  *
-
+ *
  */
 public class ProtocolMessageDecoder {
-
     /**
      * 解码
      *
@@ -44,6 +43,7 @@ public class ProtocolMessageDecoder {
         if (serializerEnum == null) {
             throw new RuntimeException("序列化消息的协议不存在");
         }
+        // 选择对应序列化器反序列化 Body
         Serializer serializer = SerializerFactory.getInstance(serializerEnum.getValue());
         ProtocolMessageTypeEnum messageTypeEnum = ProtocolMessageTypeEnum.getEnumByKey(header.getType());
         if (messageTypeEnum == null) {
@@ -51,8 +51,8 @@ public class ProtocolMessageDecoder {
         }
         switch (messageTypeEnum) {
             case REQUEST:
-                RpcRequest request = serializer.deserialize(bodyBytes, RpcRequest.class);
-                return new ProtocolMessage<>(header, request);
+                RpcRequest requestBody = serializer.deserialize(bodyBytes, RpcRequest.class);
+                return new ProtocolMessage<>(header, requestBody);
             case RESPONSE:
                 RpcResponse response = serializer.deserialize(bodyBytes, RpcResponse.class);
                 return new ProtocolMessage<>(header, response);
@@ -62,5 +62,4 @@ public class ProtocolMessageDecoder {
                 throw new RuntimeException("暂不支持该消息类型");
         }
     }
-
 }

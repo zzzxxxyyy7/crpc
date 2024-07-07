@@ -10,7 +10,6 @@ import java.util.Map;
 
  */
 public interface LoadBalancer {
-
     /**
      * 选择服务调用
      *
