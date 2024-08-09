@@ -4,7 +4,7 @@
 >
 > 一款基于 Vert.x + Etcd + SpringBoot  实现的自定义 RPC 框架。
 >
-> 同时引入其他通信协议，有 TCP 等，注册中心引入了 Zookeeper、Etcd等。
+> 同时引入其他通信协议，有 TCP 等，注册中心使用 Etcd
 
 ### 项目实现内容
 
