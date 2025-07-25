@@ -1,0 +1,4 @@
+failBack=com.crpc.fault.tolerant.FailBackTolerantStrategy
+failFast=com.crpc.fault.tolerant.FailFastTolerantStrategy
+failOver=com.crpc.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.crpc.fault.tolerant.FailSafeTolerantStrategy

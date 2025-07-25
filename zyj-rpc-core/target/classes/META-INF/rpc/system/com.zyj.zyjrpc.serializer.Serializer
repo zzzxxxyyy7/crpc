@@ -1,4 +1,0 @@
-jdk=com.zyj.zyjrpc.serializer.JdkSerializer
-hessian=com.zyj.zyjrpc.serializer.HessianSerializer
-json=com.zyj.zyjrpc.serializer.JsonSerializer
-kryo=com.zyj.zyjrpc.serializer.KryoSerializer
