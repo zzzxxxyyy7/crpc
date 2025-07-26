@@ -208,4 +208,5 @@ public class EtcdRegistry implements Registry {
             client.close();
         }
     }
+
 }

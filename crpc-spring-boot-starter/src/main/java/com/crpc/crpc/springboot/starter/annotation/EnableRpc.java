@@ -24,4 +24,5 @@ public @interface EnableRpc {
      * @return
      */
     boolean needServer() default true;
+
 }

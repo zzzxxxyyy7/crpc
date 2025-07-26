@@ -47,7 +47,6 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
         return entry.getValue();
     }
 
-
     /**
      * Hash 算法，可自行实现
      *
@@ -57,4 +56,5 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
     private int getHash(Object key) {
         return key.hashCode();
     }
+
 }

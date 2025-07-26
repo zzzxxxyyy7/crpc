@@ -33,4 +33,5 @@ public class VertxTcpServer {
     public static void main(String[] args) {
         new VertxTcpServer().doStart(8888);
     }
+
 }

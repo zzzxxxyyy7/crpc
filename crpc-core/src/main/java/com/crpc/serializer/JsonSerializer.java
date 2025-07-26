@@ -10,6 +10,7 @@ import java.io.IOException;
  * Json 序列化器
  */
 public class JsonSerializer implements Serializer {
+
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     @Override
@@ -67,4 +68,5 @@ public class JsonSerializer implements Serializer {
         rpcResponse.setData(OBJECT_MAPPER.readValue(dataBytes, rpcResponse.getDataType()));
         return type.cast(rpcResponse);
     }
+
 }

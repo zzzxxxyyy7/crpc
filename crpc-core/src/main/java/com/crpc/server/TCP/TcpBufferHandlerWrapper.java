@@ -10,6 +10,7 @@ import io.vertx.core.parsetools.RecordParser;
  * 装饰者模式，使用 recordParser 对原有的 buffer 处理能力进行增强
  */
 public class TcpBufferHandlerWrapper implements Handler<Buffer> {
+
     /**
      * 解析器，用于解决半包、粘包问题
      */
@@ -65,4 +66,5 @@ public class TcpBufferHandlerWrapper implements Handler<Buffer> {
 
         return parser;
     }
+
 }

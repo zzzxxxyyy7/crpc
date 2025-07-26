@@ -11,6 +11,7 @@ import java.io.ByteArrayOutputStream;
  * Kryo 序列化器
  */
 public class KryoSerializer implements Serializer {
+
     /**
      * kryo 线程不安全，使用 ThreadLocal 保证每个线程只有一个 Kryo
      */
@@ -38,4 +39,5 @@ public class KryoSerializer implements Serializer {
         input.close();
         return result;
     }
+
 }

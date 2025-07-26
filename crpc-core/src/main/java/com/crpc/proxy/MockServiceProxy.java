@@ -47,4 +47,5 @@ public class MockServiceProxy implements InvocationHandler {
         // 对象类型
         return null;
     }
+
 }

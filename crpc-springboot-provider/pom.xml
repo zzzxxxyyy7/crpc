@@ -68,7 +68,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.crpc.examplespringbootprovider.ExampleSpringbootProviderApplication</mainClass>
+                    <mainClass>com.crpc.springbootprovider.ExampleSpringbootProviderApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

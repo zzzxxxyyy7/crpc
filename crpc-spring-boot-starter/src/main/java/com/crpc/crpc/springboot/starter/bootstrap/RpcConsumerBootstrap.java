@@ -1,7 +1,7 @@
 package com.crpc.crpc.springboot.starter.bootstrap;
 
+import com.crpc.crpc.springboot.starter.annotation.RpcAutoworid;
 import com.crpc.proxy.ServiceProxyFactory;
-import com.crpc.crpc.springboot.starter.annotation.RpcReference;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -24,21 +24,22 @@ public class RpcConsumerBootstrap implements BeanPostProcessor {
      */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if (beanName.equals("exampleServiceImpl")) {
+        if ("exampleServiceImpl".equals(beanName)) {
             System.out.println("开始执行自动注入");
             System.out.println("当前执行的Bean是：" + beanName);
         } else {
             return null;
         }
+
         Class<?> beanClass = bean.getClass();
 
         // 遍历对象的所有属性
         Field[] declaredFields = beanClass.getDeclaredFields();
         for (Field field : declaredFields) {
-            RpcReference rpcReference = field.getAnnotation(RpcReference.class);
-            if (rpcReference != null) {
+            RpcAutoworid rpcAutoworid = field.getAnnotation(RpcAutoworid.class);
+            if (rpcAutoworid != null) {
                 // 为属性生成代理对象
-                Class<?> interfaceClass = rpcReference.interfaceClass();
+                Class<?> interfaceClass = rpcAutoworid.interfaceClass();
                 if (interfaceClass == void.class) {
                     interfaceClass = field.getType();
                 }
@@ -52,7 +53,9 @@ public class RpcConsumerBootstrap implements BeanPostProcessor {
                 }
             }
         }
-        System.out.println(BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName));
+
+        log.info("代理对象创建完成: {}", BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName));
         return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
     }
+
 }

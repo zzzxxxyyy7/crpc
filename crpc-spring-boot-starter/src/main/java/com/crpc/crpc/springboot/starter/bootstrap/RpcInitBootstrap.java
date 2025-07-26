@@ -23,9 +23,11 @@ public class RpcInitBootstrap implements ImportBeanDefinitionRegistrar {
      */
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
+
         // 获取 EnableRpc 注解的属性值
-        boolean needServer = (boolean) importingClassMetadata.getAnnotationAttributes(EnableRpc.class.getName())
-                .get("needServer");
+        boolean needServer = (boolean) importingClassMetadata
+            .getAnnotationAttributes(EnableRpc.class.getName())
+            .get("needServer");
 
         // RPC 框架初始化（配置和注册中心）
         RpcApplication.init();
@@ -44,4 +46,5 @@ public class RpcInitBootstrap implements ImportBeanDefinitionRegistrar {
             log.info("不启动 server");
         }
     }
+
 }

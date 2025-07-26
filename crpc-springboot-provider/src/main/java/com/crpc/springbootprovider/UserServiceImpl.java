@@ -1,4 +1,4 @@
-package com.crpc.examplespringbootprovider;
+package com.crpc.springbootprovider;
 
 import com.crpc.example.common.model.User;
 import com.crpc.example.common.service.UserService;

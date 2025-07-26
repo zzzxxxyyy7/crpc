@@ -48,7 +48,6 @@ public class RpcApplication {
         init(newRpcConfig);
     }
 
-
     /**
      * 获取配置
      *
@@ -64,4 +63,5 @@ public class RpcApplication {
         }
         return rpcConfig;
     }
+
 }

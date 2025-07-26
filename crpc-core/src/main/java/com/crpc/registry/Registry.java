@@ -55,4 +55,5 @@ public interface Registry {
      * 服务销毁
      */
     void destroy();
+
 }

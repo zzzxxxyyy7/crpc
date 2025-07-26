@@ -38,4 +38,5 @@ public class ConfigUtils {
         Props props = new Props(configFileBuilder.toString());
         return props.toBean(tClass, prefix);
     }
+
 }

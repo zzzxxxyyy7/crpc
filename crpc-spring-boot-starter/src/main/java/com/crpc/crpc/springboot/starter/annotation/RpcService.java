@@ -25,4 +25,5 @@ public @interface RpcService {
      * 版本
      */
     String serviceVersion() default RpcConstant.DEFAULT_SERVICE_VERSION;
+
 }

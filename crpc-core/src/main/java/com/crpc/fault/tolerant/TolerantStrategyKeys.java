@@ -2,7 +2,6 @@ package com.crpc.fault.tolerant;
 
 /**
  * 容错策略键名常量
-
  */
 public interface TolerantStrategyKeys {
 

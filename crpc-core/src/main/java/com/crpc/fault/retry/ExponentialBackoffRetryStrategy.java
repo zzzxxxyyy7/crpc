@@ -10,11 +10,11 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 递增间隔重试
- *
- *
  */
 @Slf4j
 public class ExponentialBackoffRetryStrategy implements RetryStrategy {
+
+    @Override
     public RpcResponse doRetry(Callable<RpcResponse> callable) throws ExecutionException, RetryException {
         Retryer<RpcResponse> retryer = RetryerBuilder.<RpcResponse>newBuilder()
                 .retryIfExceptionOfType(Exception.class) // 定义失败的条件
@@ -29,4 +29,5 @@ public class ExponentialBackoffRetryStrategy implements RetryStrategy {
                 .build();
         return retryer.call(callable);
     }
+
 }

@@ -4,8 +4,6 @@ import com.crpc.spi.SpiLoader;
 
 /**
  * 重试策略工厂（用于获取重试器对象）
- *
-
  */
 public class RetryStrategyFactory {
 
@@ -27,4 +25,5 @@ public class RetryStrategyFactory {
     public static RetryStrategy getInstance(String key) {
         return SpiLoader.getInstance(RetryStrategy.class, key);
     }
+
 }

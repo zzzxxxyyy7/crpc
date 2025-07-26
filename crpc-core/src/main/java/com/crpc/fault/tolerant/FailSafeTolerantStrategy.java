@@ -7,7 +7,6 @@ import java.util.Map;
 
 /**
  * 静默处理异常 - 容错策略
-
  */
 @Slf4j
 public class FailSafeTolerantStrategy implements TolerantStrategy {
@@ -17,4 +16,5 @@ public class FailSafeTolerantStrategy implements TolerantStrategy {
         log.info("静默处理异常", e);
         return new RpcResponse();
     }
+
 }

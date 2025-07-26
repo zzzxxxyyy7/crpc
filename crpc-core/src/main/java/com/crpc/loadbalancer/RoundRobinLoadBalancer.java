@@ -8,7 +8,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 轮询负载均衡器
-
  */
 public class RoundRobinLoadBalancer implements LoadBalancer {
 
@@ -31,4 +30,5 @@ public class RoundRobinLoadBalancer implements LoadBalancer {
         int index = currentIndex.getAndIncrement() % size;
         return serviceMetaInfoList.get(index);
     }
+
 }

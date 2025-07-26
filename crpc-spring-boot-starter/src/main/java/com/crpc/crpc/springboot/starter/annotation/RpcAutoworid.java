@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface RpcReference {
+public @interface RpcAutoworid {
 
     /**
      * 服务接口类
@@ -46,4 +46,5 @@ public @interface RpcReference {
      * 模拟调用
      */
     boolean mock() default false;
+
 }

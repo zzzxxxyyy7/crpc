@@ -1,18 +1,18 @@
-package com.crpc.examplespringbootprovider;
+package com.crpc.springbootconsumer;
 
 import com.crpc.crpc.springboot.starter.annotation.EnableRpc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 示例 Spring Boot 服务提供者应用
+ * 示例 Spring Boot 服务消费者应用
  */
 @SpringBootApplication
-@EnableRpc()
-public class SpringbootProviderApplication {
+@EnableRpc(needServer = false)
+public class SpringbootConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootProviderApplication.class, args);
+        SpringApplication.run(SpringbootConsumerApplication.class, args);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.crpc.examplespringbootconsumer;
+package com.crpc.springbootconsumer;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

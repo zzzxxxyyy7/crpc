@@ -73,14 +73,18 @@ public class SpiLoader {
     public static <T> T getInstance(Class<?> tClass, String key) {
         String tClassName = tClass.getName();
         Map<String, Class<?>> keyClassMap = loaderMap.get(tClassName);
+
         if (keyClassMap == null) {
             throw new RpcInitException(String.format("SpiLoader 未加载 %s 类型", tClassName));
         }
+
         if (!keyClassMap.containsKey(key)) {
             throw new RpcInitException(String.format("SpiLoader 的 %s 不存在 key=%s 的类型，请检查该类型的配置是否被正确设置", tClassName, key));
         }
+
         // 获取到要加载的实现类型
         Class<?> implClass = keyClassMap.get(key);
+
         // 从实例缓存中加载指定类型的实例
         String implClassName = implClass.getName();
         if (!instanceCache.containsKey(implClassName)) {
@@ -91,6 +95,7 @@ public class SpiLoader {
                 throw new RuntimeException(errorMsg, e);
             }
         }
+
         return (T) instanceCache.get(implClassName);
     }
 

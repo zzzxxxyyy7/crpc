@@ -10,10 +10,10 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 固定时间间隔 - 重试策略
-
  */
 @Slf4j
 public class FixedIntervalRetryStrategy implements RetryStrategy {
+
     /**
      * 重试
      *
@@ -22,6 +22,7 @@ public class FixedIntervalRetryStrategy implements RetryStrategy {
      * @throws ExecutionException
      * @throws RetryException
      */
+    @Override
     public RpcResponse doRetry(Callable<RpcResponse> callable) throws ExecutionException, RetryException {
         Retryer<RpcResponse> retryer = RetryerBuilder.<RpcResponse>newBuilder()
                 .retryIfExceptionOfType(Exception.class)
@@ -36,4 +37,5 @@ public class FixedIntervalRetryStrategy implements RetryStrategy {
                 .build();
         return retryer.call(callable);
     }
+
 }

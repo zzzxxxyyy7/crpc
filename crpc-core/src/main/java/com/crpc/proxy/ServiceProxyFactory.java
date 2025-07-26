@@ -40,4 +40,5 @@ public class ServiceProxyFactory {
                 new Class[]{serviceClass},
                 new MockServiceProxy());
     }
+
 }
