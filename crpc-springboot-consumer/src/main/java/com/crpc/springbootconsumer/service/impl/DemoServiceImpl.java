@@ -1,8 +1,8 @@
 package com.crpc.springbootconsumer.service.impl;
 
 import com.crpc.crpc.springboot.starter.annotation.RpcAutoworid;
-import com.crpc.example.common.model.User;
-import com.crpc.example.common.service.UserService;
+import com.crpc.common.model.User;
+import com.crpc.common.service.UserService;
 import com.crpc.springbootconsumer.service.DemoService;
 import org.springframework.stereotype.Service;
 

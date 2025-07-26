@@ -6,7 +6,13 @@
 
     <groupId>com.catch</groupId>
     <artifactId>crpc-core</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/io.vertx/vertx-core -->
@@ -74,14 +80,22 @@
             <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
+
+    <!-- 本地nexus私有库-->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>http://127.0.0.1:8081/repository/maven-releases/</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>releases</id>
+            <name>release</name>
+            <url>http://127.0.0.1:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>

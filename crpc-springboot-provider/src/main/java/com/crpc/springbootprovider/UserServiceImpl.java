@@ -1,7 +1,7 @@
 package com.crpc.springbootprovider;
 
-import com.crpc.example.common.model.User;
-import com.crpc.example.common.service.UserService;
+import com.crpc.common.model.User;
+import com.crpc.common.service.UserService;
 import com.crpc.crpc.springboot.starter.annotation.RpcService;
 import org.springframework.stereotype.Service;
 

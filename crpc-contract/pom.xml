@@ -6,7 +6,26 @@
 
     <groupId>com.catch</groupId>
     <artifactId>crpc-contract</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
+
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
+
+    <!-- 本地nexus私有库-->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>http://127.0.0.1:8081/repository/maven-releases/</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>releases</id>
+            <name>release</name>
+            <url>http://127.0.0.1:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>

@@ -106,12 +106,10 @@ public class SpiLoader {
      * @throws IOException
      */
     public static Map<String, Class<?>> load(Class<?> loadClass) {
-        log.info("加载类型为 {} 的 SPI", loadClass.getName());
         // 扫描路径，用户自定义的 SPI 优先级高于系统 SPI
         Map<String, Class<?>> keyClassMap = new HashMap<>();
         for (String scanDir : SCAN_DIRS) {
             List<URL> resources = ResourceUtil.getResources(scanDir + loadClass.getName());
-            System.out.println(scanDir + loadClass.getName());
             // 读取每个资源文件
             for (URL resource : resources) {
                 try {
@@ -124,6 +122,7 @@ public class SpiLoader {
                             String key = strArray[0];
                             String className = strArray[1];
                             keyClassMap.put(key, Class.forName(className));
+                            log.info("加载类型为 {} 的 SPI {}:", loadClass.getName(), className);
                         }
                     }
                 } catch (Exception e) {

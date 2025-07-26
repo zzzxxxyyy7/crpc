@@ -1,6 +1,6 @@
-package com.crpc.example.common.service;
+package com.crpc.common.service;
 
-import com.crpc.example.common.model.User;
+import com.crpc.common.model.User;
 
 public interface UserService {
 

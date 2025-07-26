@@ -1,12 +1,8 @@
-# 仿 Dubbo 的 RPC 框架
+# CRPC 框架
 
 > ## 介绍
->
-> 一款作者模仿 Dubbo 设计并实现的自定义 RPC 框架。
-> 参考了 Dubbo 的 SPI 机制、Javaassist 动态编译、Dubbo 协议、服务暴露与注册
-> 自己实现或模仿上述功能实现了相应的 RPC 功能
 
-### 项目实现内容
+### 实现内容
 
 -  基于Http/Tcp俩种编码方式进行网络通信，解决Tcp通信粘包丢包问题
 -  实现自定义RPC协议，自定义编解码器以及四种序列化方式（Kryo、Hession、JDK、JSON）
