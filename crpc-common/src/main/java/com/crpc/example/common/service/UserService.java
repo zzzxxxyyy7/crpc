@@ -2,7 +2,6 @@ package com.crpc.example.common.service;
 
 import com.crpc.example.common.model.User;
 
-
 public interface UserService {
 
     /**

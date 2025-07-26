@@ -2,6 +2,7 @@ package com.crpc.crpc.springboot.starter.bootstrap;
 
 import com.crpc.RpcApplication;
 import com.crpc.config.RpcConfig;
+import com.crpc.server.TCP.VertxTcpServer;
 import com.crpc.server.http.VertxHttpServer;
 import com.crpc.crpc.springboot.starter.annotation.EnableRpc;
 import lombok.extern.slf4j.Slf4j;
@@ -38,10 +39,10 @@ public class RpcInitBootstrap implements ImportBeanDefinitionRegistrar {
         // 启动服务器
         if (needServer) {
             // TCP服务器
-//            VertxTcpServer vertxTcpServer = new VertxTcpServer();
-//            vertxTcpServer.doStart(rpcConfig.getServerPort());
-            VertxHttpServer vertxHttpServer = new VertxHttpServer();
-            vertxHttpServer.doStart(rpcConfig.getServerPort());
+            VertxTcpServer vertxTcpServer = new VertxTcpServer();
+            vertxTcpServer.doStart(rpcConfig.getServerPort());
+//            VertxHttpServer vertxHttpServer = new VertxHttpServer();
+//            vertxHttpServer.doStart(rpcConfig.getServerPort());
         } else {
             log.info("不启动 server");
         }

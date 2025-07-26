@@ -104,8 +104,7 @@ public class ServiceProxy implements InvocationHandler {
                 .execute()) {
             byte[] result = httpResponse.bodyBytes();
             // 反序列化
-            RpcResponse rpcResponse = serializer.deserialize(result, RpcResponse.class);
-            return rpcResponse;
+            return serializer.deserialize(result, RpcResponse.class);
         }
     }
 

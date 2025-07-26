@@ -1,16 +1,13 @@
-package com.crpc.springbootconsumer;
+package com.crpc.springbootconsumer.service.impl;
 
 import com.crpc.crpc.springboot.starter.annotation.RpcAutoworid;
 import com.crpc.example.common.model.User;
 import com.crpc.example.common.service.UserService;
-import org.springframework.beans.factory.InitializingBean;
+import com.crpc.springbootconsumer.service.DemoService;
 import org.springframework.stereotype.Service;
 
-/**
- * 示例服务实现类
- */
 @Service
-public class ExampleServiceImpl implements InitializingBean {
+public class DemoServiceImpl implements DemoService {
 
     /**
      * 使用 Rpc 框架注入
@@ -19,7 +16,7 @@ public class ExampleServiceImpl implements InitializingBean {
     private UserService userService;
 
     @Override
-    public void afterPropertiesSet() {
+    public void userTest() {
         User user = new User();
         user.setName("crpc");
         User resultUser = userService.getUser(user);
